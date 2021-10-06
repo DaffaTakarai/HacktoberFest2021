@@ -1,0 +1,44 @@
+package array;
+
+import java.util.Scanner;
+
+public class Mat_Mult {
+
+	public static void main(String[] args) {
+		 Scanner sc=new Scanner(System.in);
+		 int acols,arows,brows,bcols,crows,ccols,i,j,k;
+		 System.out.println("enter the dimensions of matrix a :");
+		 arows=sc.nextInt();
+		 acols=sc.nextInt();
+		 System.out.println("enter the dimensions of matrix b:");
+		 brows=sc.nextInt();
+		 bcols=sc.nextInt();
+		 int a[][]=new int[arows][acols];
+		 int b[][]=new int[brows][bcols];
+		 System.out.println("enter array a:");
+		 for(i=0;i<arows;i++) {
+			 for(j=0;j<acols;j++) {
+				 a[i][j]=sc.nextInt();
+			 }
+		 }System.out.println("enter the array b:");
+		 for(i=0;i<brows;i++) {
+			 for(j=0;j<bcols;j++) {
+				 b[i][j]=sc.nextInt();
+			 }
+		 }crows=arows;ccols=bcols;
+		 int c[][]=new int[arows][bcols];
+		 for(k=0;k<crows;k++) {
+			 for(i=0;i<arows;i++) {
+				 for(j=0;j<bcols;j++) {
+					 c[k][i]+=a[k][j]*b[j][i];
+				 }
+			 }
+		 }System.out.println("result is:");
+		 for(k=0;k<crows;k++) {
+			 for(j=0;j<ccols;j++) {
+				 System.out.print(" "+c[k][j]);
+			 }System.out.println();
+		 }
+	}	
+
+}
